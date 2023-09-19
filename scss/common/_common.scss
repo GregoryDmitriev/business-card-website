@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 400;
+  max-width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  display: flex;
+  padding: 100px 0;
+  margin-bottom: 150px;
+}
+
+// scrollbar animation
+::-webkit-scrollbar {
+  width: 25px;
+  background: $color-lightCarminePink;
+}
+
+::-webkit-scrollbar-track {
+  border: 5px solid $color-marl;
+  box-shadow: inset 0 0 2.5px 2px $color-whiteNavajo;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    45deg,
+    $color-darkBlackishPurple,
+    $color-lightCarminePink
+  );
+  border-radius: 15px;
+}

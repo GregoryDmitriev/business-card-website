@@ -1,0 +1,29 @@
+@import './common';
+@import './components/intro';
+@import './components/header';
+@import './components/main';
+@import './components/footer';
+
+
+.main {
+	background: -webkit-linear-gradient(to bottom, $color-marl, $color-whiteNavajo, $color-lightCarminePink, $color-darkBlackishPurple);
+	background: linear-gradient(to bottom, $color-marl, $color-whiteNavajo, $color-lightCarminePink, $color-darkBlackishPurple);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+
+	.about,
+	.skills,
+	.portfolio {
+		min-height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.title {
+		color: #fff;
+	}
+
+}

@@ -1,0 +1,172 @@
+@import './about-media.scss';
+
+.about {
+	background: url(/img/png/intro2.jpg) no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	border-radius: 0 0 20px 20px;
+	width: 70%;
+
+	.about__wrapper {
+		padding: 0 20px;
+
+		.column {
+			display: flex;
+			text-align: justify;
+			flex-direction: column;
+		}
+
+		.wrapper__left,
+		.wrapper__right {
+			width: 50%;
+			padding: 40px 20px;
+			border-radius: 20px;
+		}
+
+		.wrapper__left {
+			background: $color-marl;
+			border-right: 6px double $color-whiteNavajo;
+			color: #fff;
+			display: flex;
+			justify-content: center;
+
+			p {
+				font-size: 20px;
+				line-height: 25px;
+			}
+
+			.contact {
+				display: inline-grid;
+				grid-template: 1fr 1fr/1fr 1fr;
+				grid-gap: 30px;
+				grid-template-columns: 10% 90%;
+				flex-direction: column;
+				justify-content: center;
+				position: relative;
+				left: 30px;
+				margin: 40px 0 0;
+				align-items: center;
+				justify-items: start;
+
+				.contact__item:nth-child(1) {
+					transform: rotate(160deg) skew(4deg);
+				}
+
+				.contact__item:nth-child(2) {
+					transform: rotate(227deg) skew(4deg);
+				}
+
+				.contact__item {
+					cursor: pointer;
+				}
+
+				.title-link {
+					color: #fff;
+
+					&:hover {
+						color: $color-lightCarminePink;
+					}
+				}
+
+				.contact__item a {
+					display: block;
+
+					.contact__svgicon {
+						fill: #fff;
+						cursor: pointer;
+						transition: all .8s ease;
+
+						&:hover {
+							fill: $color-lightCarminePink;
+						}
+					}
+				}
+
+				.email-link {
+					left: -5px;
+					bottom: 10px;
+					transform: rotate(200deg) skew(-4deg);
+				}
+
+				.mobile-link {
+					left: 28px;
+					top: 54px;
+					transform: rotate(38deg) skew(-4deg);
+				}
+			}
+		}
+
+		.wrapper__right {
+			padding-top: 0;
+			background: $color-whiteNavajo;
+			border-left: 6px double $color-marl;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.face {
+				.face-inner {
+					position: relative;
+					width: 200px;
+					height: 200px;
+					margin: 0 20px;
+					border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+					animation: border-animation 10s infinite;
+					background-image: linear-gradient(to bottom, $color-whiteNavajo, $color-darkBlackishPurple);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					overflow: hidden;
+
+					img {
+						max-width: 100%;
+						height: auto;
+						border-radius: 50%;
+						position: absolute;
+						top: 5px;
+						left: 2px;
+						transform: rotate(10deg) skew(2deg);
+					}
+				}
+			}
+
+			.social {
+				background: $color-marl;
+				padding: 3px 20px;
+				border-radius: 20px;
+				margin-top: 25px;
+
+				.box-social {
+					display: flex;
+					align-items: baseline;
+					justify-content: space-around;
+					background: $color-whiteNavajo;
+					border-radius: 20px;
+					padding: 10px;
+
+					.social__item {
+						cursor: pointer;
+						margin: 0 20px;
+						width: 40px;
+						height: 40px;
+
+						.social__svgicon {
+							fill: $color-marl;
+							transition: all .8s ease;
+
+							&:hover {
+								fill: $color-darkBlackishPurple;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include xxl;
+	@include xl;
+	@include md;
+	@include sm;
+	@include xs;
+}

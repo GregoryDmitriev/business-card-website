@@ -1,0 +1,61 @@
+@import './footer-media.scss';
+
+footer {
+	display: flex;
+	justify-content: center;
+	background: $color-darkBlackishPurple;
+	border-top: 1px solid $color-graySilk;
+	min-height: 100px;
+	width: 100%;
+
+	.footer__wrapper {
+		margin: 0 auto;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0;
+
+		p {
+			font-size: 18px;
+			color: $color-graySilk;
+
+			a {
+				color: $color-graySilk;
+
+				&:hover {
+					color: $color-lightCarminePink;
+				}
+			}
+		}
+
+		.footer__social {
+
+			.box-social {
+				display: flex;
+				align-items: baseline;
+				justify-content: space-between;
+				width: 200px;
+				padding: 10px 0;
+				margin-left: 200px;
+
+				.social__item {
+					cursor: pointer;
+					width: 30px;
+
+					.social__svgicon {
+						fill: $color-graySilk;
+						transition: all .8s ease;
+
+						&:hover {
+							fill: $color-lightCarminePink;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	@include xl;
+	@include md;
+	@include sm;
+}

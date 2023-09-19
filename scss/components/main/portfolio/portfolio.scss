@@ -1,0 +1,180 @@
+@import './portfolio-media.scss';
+
+.portfolio {
+
+	.portfolio__wrapper {
+		flex-direction: column;
+		padding: 0;
+
+		h2 {
+			font-family: 'Kaushan Script', cursive;
+			color: #fff;
+			z-index: 10;
+		}
+
+		.portfolio__top {
+			display: flex;
+			justify-content: flex-end;
+			margin: 110px 0 60px;
+			font-family: 'Kaushan Script', cursive;
+			font-weight: 300;
+		}
+
+		.porfolio-box {
+			display: grid;
+			grid-template: 1fr 1fr / 1fr 1fr 1fr;
+			grid-gap: 70px;
+
+			.porfolio-box__item {
+				perspective: 700px;
+				display: flex;
+				align-items: center;
+				cursor: pointer;
+				-webkit-box-shadow: 9px 10px 25px 11px #000;
+				-moz-box-shadow: 9px 10px 25px 11px #000;
+				box-shadow: 9px 10px 25px 11px #000;
+
+				img {
+					width: 100%;
+					height: 100%;
+					border-radius: 2px 20px 20px 2px;
+				}
+
+				a {
+					font-size: 30px;
+					color: $color-darkBlackishPurple;
+				}
+
+				&:hover .cover {
+					transform: rotateX(0deg) rotateY(-180deg);
+				}
+
+				&:hover .page {
+					transform: rotateX(0deg) rotateY(-180deg);
+					z-index: 2;
+				}
+
+				.cover,
+				.back-cover {
+					height: 300px;
+					width: 260px;
+					background: $color-darkBlackishPurple;
+					border-radius: 2px 20px 20px 2px;
+					position: absolute;
+					box-shadow: 1px 1px 10px $color-shadow-gray;
+					transform-origin: center left;
+				}
+
+				.cover {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					z-index: 1;
+					transition: all 2s;
+					border: 7px solid $color-whiteNavajo;
+					border-left: 10px double $color-whiteNavajo;
+				}
+
+				.back-cover {
+					background: linear-gradient(-45deg, $color-marl, $color-lightCarminePink, $color-graySilk, $color-whiteNavajo);
+					z-index: -2;
+				}
+
+				.page,
+				.last-page {
+					height: 280px;
+					width: 250px;
+					background: #fff;
+					position: absolute;
+					border-radius: 2px 10px 10px 2px;
+					transform-origin: center left;
+					z-index: -1;
+				}
+
+				.page:nth-child(2) {
+					transition-duration: 2.1s;
+				}
+
+				.page:nth-child(3) {
+					transition-duration: 2.2s;
+				}
+
+				&:hover .page:nth-child(2) {
+					transition-duration: 3s;
+				}
+
+				&:hover .page:nth-child(3) {
+					transition-duration: 4s;
+				}
+
+				.last-page {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: relative;
+					background: linear-gradient(-45deg, $color-shadow-gray, #fff, $color-shadow-gray, #fff);
+					animation: pageAnimation 15s ease;
+					background-size: 400% 400%;
+					z-index: -1;
+
+					a {
+						font-weight: 600;
+
+						&:hover {
+							color: $color-lightCarminePink;
+						}
+					}
+
+					img {
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+		}
+
+		.box-card {
+			display: grid;
+			grid-template: 1fr 1fr / 1fr 1fr 1fr;
+			grid-gap: 70px;
+
+			a {
+				cursor: pointer;
+
+				&:hover {
+					color: $color-lightCarminePink;
+				}
+			}
+
+			.box-card__item {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: $color-darkBlackishPurple;
+				border: 7px solid $color-whiteNavajo;
+				border-left: 10px double $color-whiteNavajo;
+				border-radius: 2px 20px 20px 2px;
+				-moz-box-shadow: 9px 10px 25px 11px $color-shadow-black, 1px 1px 10px $color-shadow-gray;
+				-webkit-box-shadow: 9px 10px 25px 11px $color-shadow-black, 1px 1px 10px $color-shadow-gray;
+				box-shadow: 9px 10px 25px 11px $color-shadow-black, 1px 1px 10px $color-shadow-gray;
+				transform-origin: center left;
+				width: 200px;
+				height: 230px;
+
+			}
+
+		}
+
+		@media screen and (min-width:$breakpoint_xl) {
+			.box-card {
+				display: none;
+			}
+		}
+	}
+
+
+	@include xxl;
+	@include xl;
+	@include md;
+	@include sm;
+}

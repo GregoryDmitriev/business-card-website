@@ -1,0 +1,126 @@
+@mixin md() {
+  @media screen and (max-width: $breakpoint_md) {
+    background: url(/img/webp/intro.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    animation: none;
+    border-bottom: none;
+
+    .header__wrapper {
+      width: 90%;
+      padding: 10px 20px;
+
+      .box-logo {
+        display: none;
+      }
+
+      .container {
+        min-height: 50px;
+        width: 80%;
+
+        [for="burger"] {
+          display: block;
+          position: fixed;
+          width: 50px;
+          top: 3%;
+          right: 3%;
+
+          &:before {
+            content: url(/img/svg_other/burger.svg);
+            cursor: pointer;
+          }
+        }
+
+        #burger:checked + [for="burger"]::before {
+          content: url(/img/svg_other/cancel-burger.svg);
+          cursor: pointer;
+          position: fixed;
+          top: 5%;
+          right: 16%;
+          width: 50px;
+          z-index: 200;
+        }
+
+        #burger:checked + label + nav {
+          display: block;
+          animation: show 0.5s ease;
+          transition: all 0.5s;
+          position: fixed;
+          top: 3%;
+        }
+
+        nav {
+          display: none;
+          position: absolute;
+          user-select: none;
+          background: $color-whiteNavajo;
+          border: 5px double $color-lightCarminePink;
+          border-radius: 20px;
+          padding: 70px 0;
+          top: 50%;
+          left: 60%;
+          transform: translate(-58%, 0%);
+          z-index: -1;
+
+          .menu {
+            flex-direction: column;
+            align-items: center;
+            min-width: 500px;
+
+            .menu__item {
+              margin: 30px;
+              a {
+                color: $color-lightCarminePink;
+                font-size: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin sm() {
+  @media screen and (max-width: $breakpoint_sm) {
+    .header__wrapper {
+      .box-logo {
+        margin: 0;
+      }
+      .container {
+        #burger:checked + [for="burger"]::before {
+          position: fixed;
+          top: 4%;
+          right: 15%;
+          width: 50px;
+          z-index: 200;
+        }
+
+        nav {
+          .menu {
+            min-width: 320px;
+            .menu__item {
+              a {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin xs(){
+  @media screen and (max-width: $breakpoint_xs) {
+    .header__wrapper {
+      .container {
+        #burger:checked + [for="burger"]::before {
+          top: 5%;
+          right: 8%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import "./header-media.scss";
+
+header {
+  background: -webkit-linear-gradient(
+    to right,
+    $color-marl,
+    $color-darkBlackishPurple,
+    $color-whiteNavajo,
+    $color-lightCarminePink
+  );
+  background: linear-gradient(
+    to right,
+    $color-marl,
+    $color-darkBlackishPurple,
+    $color-whiteNavajo,
+    $color-lightCarminePink
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  border-bottom: 1px solid #fff;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+
+  .header__wrapper {
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+
+    .box-logo {
+      margin: 10px 0;
+      .logo {
+        background: #fff;
+        border-radius: 50%;
+      }
+
+      .header__logo {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .container {
+      font-family: "Kaushan Script", cursive;
+      position: relative;
+      min-width: 70%;
+
+      #burger,
+      [for="burger"] {
+        display: none;
+      }
+
+      nav {
+        .menu {
+          display: flex;
+
+          .menu__item {
+            position: relative;
+            cursor: pointer;
+            margin: 0 30px;
+
+            a {
+              color: #fff;
+              text-transform: uppercase;
+              letter-spacing: 3px;
+              text-decoration: none;
+              padding: 10px 5px;
+              transition: all 0.45s;
+            }
+
+            &:hover a {
+              color: $color-darkBlackishPurple;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include md;
+  @include sm;
+  @include xs;
+}
